@@ -5,7 +5,7 @@
     'author': 'BIKO Solutions',
     'company': 'BIKO Solutions',
     'maintainer': 'BIKO Solutions',
-    "depends": ['crm'],
+    "depends": ['crm', 'sale_management'],
     "data": [
         'views/crm_lead_views.xml',
         'views/biko_custom_menus.xml',
