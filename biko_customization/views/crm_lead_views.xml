@@ -1,0 +1,14 @@
+<odoo>
+    <record id="view_biko_custom_crm_case_opportunities_filter" model="ir.ui.view">
+        <field name="name">crm.lead.search.opportunity.biko.inherited1</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='assigned_to_me']" position="before">
+                <filter string = "Assigned to me and opened" name="biko_opened_and_my"
+                        domain="['|', ('user_id', '=', uid), ('user_id', '=', False)]"
+                        help="Opportunities that are assigned to me or unassigned"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
