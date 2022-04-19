@@ -1,6 +1,11 @@
 {
     "name": "BIKO: customization",
-    "category": "Themes/Backend",
+    "summary": """
+    1. В PIVOT добавил расчет % маржи (считает с ошибкой!!! нужно переделат ьна отчет)
+    2. При клике раздела Sales автоматически открывается панель команд
+    3. Добавил фильтр Мои и открытые
+    """,
+    "category": "",
     "version": "15.0.1.1.1",
     'author': 'BIKO Solutions',
     'company': 'BIKO Solutions',
