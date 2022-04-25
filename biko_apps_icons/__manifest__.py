@@ -6,7 +6,7 @@
     'author': 'BIKO Solutions',
     'company': 'BIKO Solutions',
     'maintainer': 'BIKO Solutions',
-    "depends": ['base', 'base_setup'],
+    "depends": ['base', 'base_setup', 'muk_web_theme'],
     "data": [
         'views/icons.xml',
         'views/res_config_settings_view.xml',
