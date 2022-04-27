@@ -9,11 +9,12 @@
     'version': '15.0.1.1.0',
     'author': 'Borovlev AS',
     'company': 'BIKO',
-    "depends": ['base', 'contacts'],
+    "depends": ['base', 'contacts', 'crm'],
     "data": [
         'views/biko_software_views.xml',
         'views/biko_source_views.xml',
         'views/res_partner_views.xml',
+        'views/crm_lead_views.xml',
         'views/menu.xml',
         'security/ir.model.access.csv',
     ],
