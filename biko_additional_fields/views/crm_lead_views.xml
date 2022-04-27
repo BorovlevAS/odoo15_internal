@@ -8,13 +8,16 @@
             <xpath expr="//*/field[@name='lost_reason']" position="after">
                 <field name="lost_reason_comment" attrs="{'invisible': [('active', '=', True)]}"/>
             </xpath>
-            <xpath expr="//*/field[@name='campaign_id']" position="replace">
+            <xpath expr="//*/page[@name='lead']//field[@name='campaign_id']" position="before">
+                <field name="inner_source_id"/>
+            </xpath>
+            <xpath expr="//*/page[@name='lead']//field[@name='campaign_id']" position="replace">
                 <field name="campaign_id" string="Campaign (UTM)" />
             </xpath>
-            <xpath expr="//*/field[@name='medium_id']" position="replace">
+            <xpath expr="//*/page[@name='lead']//field[@name='medium_id']" position="replace">
                 <field name="medium_id" string="Medium (UTM)" />
             </xpath>
-            <xpath expr="//*/field[@name='source_id']" position="replace">
+            <xpath expr="//*/page[@name='lead']//field[@name='source_id']" position="replace">
                 <field name="source_id" string="Source (UTM)" />
             </xpath>
         </field>
