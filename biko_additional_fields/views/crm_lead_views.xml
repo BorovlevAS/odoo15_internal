@@ -30,10 +30,10 @@
         <field name="priority">1</field>
         <field name="arch" type="xml">
             <xpath expr="//*/field[@name='campaign_id']" position="after">
-                <field name="inner_source_id"/>
+                <field name="inner_source_id" optional="show"/>
             </xpath>
             <xpath expr="//*/field[@name='stage_id']" position="after">
-                <field name="lost_reason_comment"/>
+                <field name="lost_reason_comment" optional="show"/>
             </xpath>
         </field>
     </record>
