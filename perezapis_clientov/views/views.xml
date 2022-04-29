@@ -1,0 +1,91 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="perezapis_clientov.list">
+      <field name="name">perezapis_clientov list</field>
+      <field name="model">perezapis_clientov.perezapis_clientov</field>
+      <field name="arch" type="xml">
+        <tree>
+          <header>
+          <button name="action_do_something" string="Obrabotka" type="object" class="oe_highlight"/>
+        </header>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+          <field name="description2"/>
+          <field name="Company"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+
+      <record model="ir.ui.view" id="Course_form_view">
+      <field name="name">Course.form</field>
+      <field name="model">perezapis_clientov.perezapis_clientov</field>
+      <field name="arch" type="xml">
+          <form string = "Course form">
+             <header>-->
+          <button name="action_do_something" string="Obrabotka" type="object" class="oe_highlight"/>
+          <button name="perezapis_clientov.action_window" string="Menu" type="action" class="oe_highlight"/>
+        </header>
+             <sheet>
+              <group>
+                  <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+          <field name="description2"/>
+          <field name="Company"/>
+          <field name="description"/>
+              </group>
+          </sheet>
+          </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="perezapis_clientov.action_window">
+      <field name="name">perezapis_clientov window</field>
+      <field name="res_model">perezapis_clientov.perezapis_clientov</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="perezapis_clientov.action_server">
+      <field name="name">perezapis_clientov server</field>
+      <field name="model_id" ref="model_perezapis_clientov_perezapis_clientov"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="perezapis_clientov" id="perezapis_clientov.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="perezapis_clientov.menu_1" parent="perezapis_clientov.menu_root"/>
+    <menuitem name="Menu 2" id="perezapis_clientov.menu_2" parent="perezapis_clientov.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="perezapis_clientov.menu_1_list" parent="perezapis_clientov.menu_1"
+              action="perezapis_clientov.action_window"/>
+    <menuitem name="Server to list" id="perezapis_clientov" parent="perezapis_clientov.menu_2"
+              action="perezapis_clientov.action_server"/>
+
+  </data>
+</odoo>
