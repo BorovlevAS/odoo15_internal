@@ -1,7 +1,7 @@
 {
-    "name": "BIKO: Hide pager",
+    "name": "BIKO: Hide chatter",
     "summary": """
-        A module that lets the user hide pager 
+        A module that lets the user hide chatter 
         """,
     "author": "BIKO Solutions",
     "website": "",
@@ -11,9 +11,9 @@
     "depends": ["web"],
 
     'assets': {
-        'web.assets_qweb': ['biko_hide_pager/static/src/**/*.xml'],
+        'web.assets_qweb': ['biko_hide_chatter/static/src/**/*.xml'],
         'web.assets_backend': [
-            'biko_hide_pager/static/src/js/hide_panel_toggle.js',
+            'biko_hide_chatter/static/src/js/hide_panel_toggle.js',
         ],
     },
     "installable": True,
