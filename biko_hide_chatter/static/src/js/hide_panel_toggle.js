@@ -5,6 +5,14 @@ odoo.define('hide_panel_toggle.HPanel',function (require) {
     var Pager = require('web.Pager');
     utils.patch(Pager.prototype, "BIKO.hide.panel", {
 
+        mounted() {
+            if ($('body').attr("class").includes('_chatter_position_sided')) {
+                $('.o_pager_hide').show();
+            } else {
+                $('.o_pager_hide').hide();
+            }
+        },
+
         _onHideShow: function () {
 
             let $but = $('.o_pager_hide');

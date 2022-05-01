@@ -1,9 +1,0 @@
-<odoo>
-    <data>
-           <template id="chatter_hide_extension_assets_backend" name="chatter_hide_extension assets" inherit_id="web.assets_backend">
-		        <xpath expr="." position="inside">	     
-			        <script type="text/javascript" src="/biko_hide_pager/static/src/js/hide_panel.js"></script>
-		        </xpath>
-   		</template>
-    </data>
-</odoo>
