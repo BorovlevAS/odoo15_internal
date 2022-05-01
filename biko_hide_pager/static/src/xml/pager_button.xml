@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template>
+    <t
+        t-name="web_hider.Pager"
+        t-inherit="web.Pager"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+        <xpath expr="//span/button[hasclass('o_pager_next')]" position="after">
+            <span class="btn-group" aria-atomic="true">
+                <button
+                    type="button"
+                    class="fa fa-step-forward btn btn-secondary o_pager_hide"
+                    aria-label="Hide"
+                    title="Hide Chatter"
+                    tabindex="-2"
+                    t-on-click="_onHideShow()"
+                    style="margin-left: 5px;"
+                />
+            </span>
+        </xpath>
+    </t>
+</template>
