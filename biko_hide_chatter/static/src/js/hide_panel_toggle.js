@@ -6,7 +6,7 @@ odoo.define('hide_panel_toggle.HPanel',function (require) {
     utils.patch(Pager.prototype, "BIKO.hide.panel", {
 
         mounted() {
-            if ($('body').attr("class").includes('_chatter_position_sided')) {
+            if ($('body').attr("class").includes('_chatter_position_sided') && $('.o_FormRenderer_chatterContainer').length) {
                 $('.o_pager_hide').show();
             } else {
                 $('.o_pager_hide').hide();
