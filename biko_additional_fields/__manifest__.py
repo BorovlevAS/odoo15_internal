@@ -23,5 +23,4 @@
     'application': True,
     'auto_install': False,
     "sequence": -1,
-    # lasfhlksadfhkjashdfkjsfhskjdfhkj
 }
