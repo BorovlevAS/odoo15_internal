@@ -10,5 +10,3 @@ class SaleReport(models.Model):
         fields['margin_percent'] = ", SUM(l.margin_percent * 100) AS margin_percent"
         return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)
 
-
-    # dssdffsdf

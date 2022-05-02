@@ -11,4 +11,14 @@
     <record id="base.action_partner_form" model="ir.actions.act_window">
         <field name="view_mode">tree,form,kanban,activity</field>
     </record>
+
+     <record model="ir.actions.server" id="action_perazapis3434">
+      <field name="name">Perezapis Naimenovania</field>
+      <field name="type">ir.actions.server</field>
+      <field name="model_id" ref="model_res_partner"/>
+      <field name="binding_model_id" ref="model_res_partner"/>
+      <field name="state">code</field>
+      <field name="code">action = records.action_do_something()</field>
+    </record>
+
 </odoo>
