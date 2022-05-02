@@ -12,5 +12,4 @@
         <field name="view_mode">tree,form,kanban,activity</field>
     </record>
 
-
 </odoo>
