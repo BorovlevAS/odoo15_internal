@@ -30,6 +30,7 @@
             border: 1px solid gray('400');
             box-shadow: 0 5px 20px -15px black;
             max-width: calc(100% - #{$o-horizontal-padding*2});
+            width: auto !important;
         }
         .o_form_statusbar {
             position: sticky;
