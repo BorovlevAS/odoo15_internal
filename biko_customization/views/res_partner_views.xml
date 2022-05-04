@@ -11,4 +11,5 @@
     <record id="base.action_partner_form" model="ir.actions.act_window">
         <field name="view_mode">tree,form,kanban,activity</field>
     </record>
+
 </odoo>
