@@ -43,6 +43,5 @@ class ImportRecs(models.TransientModel):
                             f_name = c_file['name']
                             req = requests.get(c_file['urlDownload'])
                             f_attachments.append((f_name, req.content))
-
-                    message_rec = record.message_post(body=msg, message_type='comment', attachments=f_attachments)
-                    message_rec['date'] = date_time
+                        message_rec = record.message_post(body=msg, message_type='comment', attachments=f_attachments)
+                        message_rec['date'] = date_time
