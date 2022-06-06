@@ -9,17 +9,16 @@ class ImportRecs(models.TransientModel):
 
     file = fields.Binary(string='File name')
     file_name = fields.Char()
+    charset = fields.Selection(selection = [('UTF-8', 'UTF-8'), ('windows-1251', 'windows-1251')], string = 'Charset')
 
     def action_import_records(self):
         data = base64.b64decode(self.file)
-        data = data.decode('windows-1251')
+        data = data.decode('UTF-8')
         jsdata = json.loads(data)
 
         env_deals = self.env['crm.lead'].env
-        i = 0
 
         for deal in jsdata.values():
-            if i >= 3: break
 
             comments_list = deal['comments']
             # self.env.ref
@@ -36,12 +35,10 @@ class ImportRecs(models.TransientModel):
                     date_time = datetime.fromisoformat(comment['CREATED']).replace(tzinfo=None)
                     msg = comment['COMMENT']
                     f_attachments = []
-                    # TODO: заполнить тут прикрепленные файлы и передать их в функцию
                     if ('FILES' in comment.keys()):
-                        i += 1
                         for c_file in comment['FILES'].values():
                             f_name = c_file['name']
                             req = requests.get(c_file['urlDownload'])
                             f_attachments.append((f_name, req.content))
-                        message_rec = record.message_post(body=msg, message_type='comment', attachments=f_attachments)
-                        message_rec['date'] = date_time
+                    message_rec = record.message_post(body=msg, message_type='comment', attachments=f_attachments)
+                    message_rec['date'] = date_time
