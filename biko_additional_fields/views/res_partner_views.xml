@@ -72,7 +72,7 @@
     </record>
 
     <record id="contacts.action_contacts" model="ir.actions.act_window">
-        <field name="context">{'default_is_company': False}</field>
+        <field name="context">{'default_is_company': False, 'search_default_group_company': 1}</field>
         <field name="domain">[('is_company', '=', False)]</field>
         <field name="view_mode">tree,kanban,form,activity</field>
     </record>
