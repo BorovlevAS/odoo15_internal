@@ -13,7 +13,7 @@ class ImportRecs(models.TransientModel):
 
     def action_import_records(self):
         data = base64.b64decode(self.file)
-        data = data.decode('UTF-8')
+        data = data.decode(self.charset)
         jsdata = json.loads(data)
 
         env_deals = self.env['crm.lead'].env
